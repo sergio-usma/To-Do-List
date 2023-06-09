@@ -11,6 +11,7 @@ html {
 
 body,
 input,
+textarea,
 button {
   font-family: "Arial", sans-serif;
   font-size: 1.6rem;
@@ -135,7 +136,12 @@ main {
 
 .list__container__checklist__item__text {
   flex-basis: 88%;
+  height: 26px;
   padding: 0 4px;
+  resize: none;
+  border-style: none;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 .list__container__checklist__item__buttons {
