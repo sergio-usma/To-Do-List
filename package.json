@@ -2,6 +2,8 @@
   "name": "webpack_template",
   "version": "1.0.0",
   "description": "<a name=\"readme-top\"></a>",
+  "main": "src/index.js",
+  "type": "module",
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
