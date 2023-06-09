@@ -21,7 +21,7 @@ export default class RenderList {
     listContainer.innerHTML = '';
 
     // eslint-disable-next-line no-restricted-syntax
-    for (const task of this.toDoList) {
+    this.toDoList.forEach((task) => {
       const listItem = document.createElement('li');
       listItem.className = 'list__container__checklist__item';
 
@@ -51,7 +51,7 @@ export default class RenderList {
       listItem.appendChild(buttonsDiv);
 
       listContainer.appendChild(listItem);
-    }
+    });
   }
 
   toLocalStorage() {
