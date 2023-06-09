@@ -1,6 +1,6 @@
 import ListElement from './listElement.js';
 
-export default class RenderList {
+class RenderList {
   constructor() {
     this.toDoList = localStorage.getItem('toDoList')
       ? JSON.parse(localStorage.getItem('toDoList'))
@@ -86,3 +86,5 @@ export default class RenderList {
     localStorage.setItem('toDoList', JSON.stringify(this.toDoList));
   }
 }
+
+export default RenderList;
