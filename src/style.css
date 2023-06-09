@@ -38,12 +38,10 @@ main {
   width: 90%;
   max-width: 500px;
   height: auto;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   background-color: rgba(255, 255, 255, 0.5);
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -57,7 +55,6 @@ main {
 
 .list__container {
   width: 100%;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -67,14 +64,11 @@ main {
 .list__container__title {
   width: 100%;
   min-height: 20px;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   padding: 0.5rem 1rem;
   border: 1px solid rgba(0, 0, 0, 0.1);
-
   background-color: rgba(255, 255, 255, 0.8);
 }
 
@@ -98,11 +92,9 @@ main {
 .list__container__input__text {
   width: 100%;
   height: 40px;
-
   padding: 0.5rem 1rem;
   border: 1px solid rgba(0, 0, 0, 0.1);
   font-style: italic;
-
   background-color: rgba(255, 255, 255, 0.8);
 }
 
@@ -115,7 +107,6 @@ main {
   position: absolute;
   top: calc(50% - 10px);
   right: 10px;
-
   border-style: none;
   background-color: transparent;
   cursor: pointer;
@@ -130,14 +121,11 @@ main {
 .list__container__checklist__item {
   width: 100%;
   min-height: 20px;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   padding: 0.5rem;
   border: 1px solid rgba(0, 0, 0, 0.1);
-
   background-color: rgba(255, 255, 255, 0.8);
 }
 
