@@ -1,21 +1,26 @@
-import _ from 'lodash';
 import './style.css';
-import logoImg from '../assets/logo.png';
+import './assets/img/astronaut-bg.jpg';
+import RenderList from './modules/renderList.js';
 
-function component() {
-  const element = document.createElement('div');
+const renderList = new RenderList();
 
-  // Lodash, now imported by this script
-  element.innerHTML = _.join(['Hello', 'webpack', 'This is my project'], ' ');
-  element.classList.add('hello');
+const addButton = document.querySelector('.list__container__input__button');
+const inputText = document.querySelector('.list__container__input__text');
 
-  // Add the image to our existing div.
-  const logo = new Image();
-  logo.src = logoImg;
+addButton.addEventListener('click', () => {
+  const description = inputText.value.trim();
+  if (description !== '') {
+    renderList.addTask(description);
+    inputText.value = '';
+  }
+});
 
-  element.appendChild(logo);
-
-  return element;
-}
-
-document.body.appendChild(component());
+inputText.addEventListener('keyup', (event) => {
+  if (event.key === 'Enter') {
+    const description = inputText.value.trim();
+    if (description !== '') {
+      renderList.addTask(description);
+      inputText.value = '';
+    }
+  }
+});

@@ -1,7 +1,195 @@
-.hello {
-  color: red;
-  background: url('../assets/logo.png');
-  background-repeat: no-repeat;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body,
+input,
+button {
+  font-family: "Arial", sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: black;
+}
+
+body {
+  height: 100vh;
+  background-image: url("./assets/img/astronaut-bg.jpg");
   background-position: center;
-  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.list {
+  width: 90%;
+  max-width: 500px;
+  height: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.list__title {
+  font-size: 3.2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.list__container {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.list__container__title {
+  width: 100%;
+  min-height: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.list__container__title__text {
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+.list__container__title__button {
+  height: 20px;
+  border-style: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.list__container__input {
+  width: 100%;
+  position: relative;
+}
+
+.list__container__input__text {
+  width: 100%;
+  height: 40px;
+
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font-style: italic;
+
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.list__container__input__text:focus {
+  outline: none;
+}
+
+.list__container__input__button {
+  height: 20px;
+  position: absolute;
+  top: calc(50% - 10px);
+  right: 10px;
+
+  border-style: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.list__container__checklist {
+  width: 100%;
+  overflow-y: auto;
+  list-style: none;
+}
+
+.list__container__checklist__item {
+  width: 100%;
+  min-height: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.list__container__checklist__item__checkbox {
+  flex-basis: 5%;
+}
+
+.list__container__checklist__item__text {
+  flex-basis: 88%;
+  padding: 0 4px;
+}
+
+.list__container__checklist__item__buttons {
+  flex-basis: 7%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.list__container__checklist__item__rm-button {
+  display: none;
+  border-style: none;
+  background: none;
+  cursor: pointer;
+  color: red;
+}
+
+.list__container__checklist__item__rm-button:hover {
+  background: none;
+  transform: scale(1.1);
+}
+
+.list__container__checklist__item__mv-button {
+  font-size: 1.8rem;
+  border-style: none;
+  cursor: move;
+  background: none;
+}
+
+.list__container__checklist__item__mv-button:hover {
+  background: none;
+}
+
+.list__container__button {
+  font-weight: 400;
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.list__container__button:hover {
+  background-color: rgba(247, 128, 99, 0.8);
 }
