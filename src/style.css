@@ -146,7 +146,7 @@ main {
 }
 
 .list__container__checklist__item__rm-button {
-  display: none;
+  /* display: none; */
   border-style: none;
   background: none;
   cursor: pointer;

@@ -16,11 +16,15 @@ export default class RenderList {
     this.toLocalStorage();
   }
 
+  deleteTask(id) {
+    this.toDoList = this.toDoList.filter((task) => task.id !== id);
+    this.toLocalStorage();
+  }
+
   renderList() {
     const listContainer = document.querySelector('.list__container__checklist');
     listContainer.innerHTML = '';
 
-    // eslint-disable-next-line no-restricted-syntax
     this.toDoList.forEach((task) => {
       const listItem = document.createElement('li');
       listItem.className = 'list__container__checklist__item';
@@ -41,6 +45,12 @@ export default class RenderList {
       const removeButton = document.createElement('button');
       removeButton.className = 'list__container__checklist__item__rm-button';
       removeButton.innerHTML = '<i class="bi bi-trash"></i>';
+
+      removeButton.addEventListener('click', () => {
+        this.deleteTask(task.id);
+        this.renderList();
+      });
+
       buttonsDiv.appendChild(removeButton);
 
       const moveButton = document.createElement('button');
