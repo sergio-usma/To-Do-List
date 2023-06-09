@@ -21,6 +21,15 @@ export default class RenderList {
     this.toLocalStorage();
   }
 
+  editTask(id, newDescription) {
+    const task = this.toDoList.find((task) => task.id === id);
+    if (task) {
+      task.description = newDescription;
+      this.renderList();
+      this.toLocalStorage();
+    }
+  }
+
   renderList() {
     const listContainer = document.querySelector('.list__container__checklist');
     listContainer.innerHTML = '';
@@ -34,10 +43,10 @@ export default class RenderList {
       checkbox.className = 'list__container__checklist__item__checkbox';
       listItem.appendChild(checkbox);
 
-      const textSpan = document.createElement('span');
-      textSpan.className = 'list__container__checklist__item__text';
-      textSpan.textContent = task.description;
-      listItem.appendChild(textSpan);
+      const textarea = document.createElement('textarea'); // Changed from <span> to <textarea>
+      textarea.className = 'list__container__checklist__item__text'; // Added class name for styling
+      textarea.value = task.description; // Set initial value to task description
+      listItem.appendChild(textarea);
 
       const buttonsDiv = document.createElement('div');
       buttonsDiv.className = 'list__container__checklist__item__buttons';
@@ -61,6 +70,11 @@ export default class RenderList {
       listItem.appendChild(buttonsDiv);
 
       listContainer.appendChild(listItem);
+
+      textarea.addEventListener('blur', () => {
+        textarea.disabled = true; // Disable textarea after editing
+        this.editTask(task.id, textarea.value); // Save edited description
+      });
     });
   }
 
