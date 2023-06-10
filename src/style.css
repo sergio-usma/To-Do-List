@@ -144,6 +144,15 @@ main {
   cursor: pointer;
 }
 
+.list__container__checklist__item__text:focus {
+  outline: none;
+}
+
+.completed {
+  font-style: italic;
+  text-decoration: line-through;
+}
+
 .list__container__checklist__item__buttons {
   flex-basis: 7%;
   display: flex;
