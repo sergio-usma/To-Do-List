@@ -1,7 +1,7 @@
 export default class ListElement {
-  constructor(id, description, done) {
+  constructor(id, description) {
     this.id = id;
     this.description = description;
-    this.done = done;
+    this.completed = false;
   }
 }

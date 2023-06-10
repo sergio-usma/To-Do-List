@@ -11,6 +11,7 @@ export default class RenderList {
 
   addTask(description) {
     const task = new ListElement(this.toDoList.length + 1, description, false);
+    task.completed = false;
     this.toDoList.push(task);
     this.renderList();
     this.toLocalStorage();
@@ -34,6 +35,15 @@ export default class RenderList {
     }
   }
 
+  clearCompletedTasks() {
+    this.toDoList = this.toDoList.filter((task) => !task.completed);
+    this.toDoList.forEach((task, index) => {
+      task.id = index + 1;
+    });
+    this.renderList();
+    this.toLocalStorage();
+  }
+
   renderList() {
     const listContainer = document.querySelector('.list__container__checklist');
     listContainer.innerHTML = '';
@@ -47,9 +57,9 @@ export default class RenderList {
       checkbox.className = 'list__container__checklist__item__checkbox';
       listItem.appendChild(checkbox);
 
-      const textarea = document.createElement('textarea'); // Changed from <span> to <textarea>
-      textarea.className = 'list__container__checklist__item__text'; // Added class name for styling
-      textarea.value = task.description; // Set initial value to task description
+      const textarea = document.createElement('textarea');
+      textarea.className = 'list__container__checklist__item__text';
+      textarea.value = task.description;
       listItem.appendChild(textarea);
 
       const buttonsDiv = document.createElement('div');
@@ -75,9 +85,31 @@ export default class RenderList {
 
       listContainer.appendChild(listItem);
 
+      checkbox.addEventListener('change', () => {
+        task.completed = checkbox.checked;
+        if (task.completed) {
+          textarea.classList.add('completed');
+        } else {
+          textarea.classList.remove('completed');
+        }
+        this.toLocalStorage();
+      });
+
       textarea.addEventListener('blur', () => {
-        textarea.disabled = true; // Disable textarea after editing
-        this.editTask(task.id, textarea.value); // Save edited description
+        textarea.disabled = true;
+        this.editTask(task.id, textarea.value);
+      });
+
+      textarea.addEventListener('keyup', (event) => {
+        if (event.key === 'Enter') {
+          textarea.disabled = true;
+          this.editTask(task.id, textarea.value);
+        }
+      });
+
+      const clearButton = document.querySelector('.list__container__button');
+      clearButton.addEventListener('click', () => {
+        this.clearCompletedTasks();
       });
     });
   }
