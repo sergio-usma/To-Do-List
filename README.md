@@ -29,7 +29,7 @@
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ (OPTIONAL)](#faq)
+- [❓ FAQ](#faq)
 - [📝 License](#license)
 
 <!-- PROJECT DESCRIPTION -->
@@ -188,7 +188,7 @@ I would like to express my heartfelt gratitude to Microverse for the invaluable 
 
 <!-- FAQ (optional) -->
 
-## ❓ FAQ (OPTIONAL) <a name="faq"></a>
+## ❓ FAQ <a name="faq"></a>
 - **How do I set up the project?**
 
   - Clone the repository from GitHub, and see the [Setup](#setup) section above for details.
